@@ -1,0 +1,49 @@
+# Introduction
+
+Our protocol is composed of a magic number, a type, a size, a string.
+The magic number, the type and the size are stocked in a structure.
+The magic number (uint32_t) is directly managed by our librairies.
+The type (uint8_t) is an enum of all actions possible.
+The size (uint32_t) is the size of the packet after the structure (size of the string).
+The string (std::string) is the complement of the type. This indicates optional informations.
+
+# Type description
+
+    Login:  Client send to Serv when connecting
+        string: ip + port
+
+    Logout: Client send to Serv when disconnecting
+
+    PingAlive: Serv sending to client to manage client crashs (serv is disconnecting a client after 10sec)
+
+    PingAlive: Client responding to serv to prove that it is still connected
+
+    UsernameOK: Client sending to serv
+        string: username entered in game
+
+    UsernameOK: Serv sending to client if username is available
+
+    UsernameKO: Serv sending to client if username is unavailable
+
+    Lobby: Client sending to serv to get other client status during lobby
+
+    Lobby: Serv sending to client usernames and if clients are ready or not
+        string: usernames and ready
+
+    Ready: Client sending to serv that it is ready
+
+    NotReady: Client sending to serv that is unready
+
+    GameStart: Serv sending to client that the game start when every clients are ready since 1 second
+
+    GameUpdate: Serv sending to client game updates (allies and enemies)
+        string: id, name and positions
+
+    PlayerInput: Client sending to serv the client inputs
+        string: left
+        string: right
+        string: up
+        string down
+        string: shoot
+
+    PlayerDead: Serv sending to client that it is dead
