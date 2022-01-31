@@ -78,7 +78,7 @@ After that you will be redirected on the lobby page, where you can wait others p
 
 ✅ You MUST respect standard RFC keywords as described in RFC 2119.
 
-❓ There MUST be Bydos slaves in your game.
+✅ There MUST be Bydos slaves in your game.
 
 ✅ Each kind of monster MUST be a dynamic library that can be loaded by your server without having to restart it.
 
@@ -110,5 +110,5 @@ For the client and the server, we are using `ASIO`.
 ## Authors
   - [Martin Olivier](https://github.com/tocola)
   - [Sean Morton](https://github.com/Seanmrt)
-  - [Nicolas Alain](https://github.com/Nirasak)
+  - [Nicolas Allain](https://github.com/Nirasak)
   - [Maxime Sarres](https://github.com/XriM)
